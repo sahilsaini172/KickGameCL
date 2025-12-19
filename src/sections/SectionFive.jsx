@@ -2,7 +2,7 @@ import { ArrowRight, Plus } from "lucide-react";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
 
-const sectionThree = [
+const sectionFive = [
   {
     url: "/s511.png",
     hoverUrl: "/s512.png",
@@ -29,19 +29,74 @@ const sectionThree = [
     prize: 30.0,
     prevPrize: 60.0,
   },
+  {
+    url: "/s511.png",
+    hoverUrl: "/s512.png",
+    title: "SB Star Tee",
+    noOfSize: 4,
+    onSale: true,
+    prize: 30.0,
+    prevPrize: 40.0,
+  },
+  {
+    url: "/s521.png",
+    hoverUrl: "/s522.png",
+    title: "Signature Sweater",
+    noOfSize: 5,
+    onSale: false,
+    prize: 75.0,
+  },
+  {
+    url: "/s531.png",
+    hoverUrl: "/s532.png",
+    title: "Double Knee SB Jorts",
+    noOfSize: 4,
+    onSale: true,
+    prize: 30.0,
+    prevPrize: 60.0,
+  },
+  {
+    url: "/s531.png",
+    hoverUrl: "/s532.png",
+    title: "Double Knee SB Jorts",
+    noOfSize: 4,
+    onSale: true,
+    prize: 30.0,
+    prevPrize: 60.0,
+  },
+  {
+    url: "/s511.png",
+    hoverUrl: "/s512.png",
+    title: "SB Star Tee",
+    noOfSize: 4,
+    onSale: true,
+    prize: 30.0,
+    prevPrize: 40.0,
+  },
 ];
 
-export default function SectionFive() {
+export default function SectionFive({ screenWidth }) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
 
   return (
-    <section className="flex flex-col bg-surface p-4">
-      <h2 className="uppercase text-xl font-bold tracking-wide mb-4">
-        just dropped
-      </h2>
+    <section className="flex flex-col bg-surface p-4 md:p-8 lg:p-12">
+      <div className="justify-between flex items-center h-fit md:py-2">
+        <h2 className="uppercase text-xl font-bold tracking-wide mb-4">
+          just dropped
+        </h2>
+        {screenWidth > 776 && (
+          <PrimaryButton
+            varient="black"
+            className="gap-2 mt-4 hover:bg-black/70"
+            label="shop collection"
+          >
+            <ArrowRight size={20} />
+          </PrimaryButton>
+        )}
+      </div>
 
-      <div className="flex gap-2 overflow-x-auto sm:grid sm:grid-cols-3 sm:grid-rows-1 sm:gap-2">
-        {sectionThree.map((item, idx) => {
+      <div className="flex gap-2 overflow-x-auto sm:grid sm:grid-cols-3 sm:grid-rows-1 sm:gap-2 md:grid md:grid-cols-4 md:grid-rows-1 md:gap-2 lg:grid lg:grid-cols-5 lg:grid-rows-1 lg:gap-2">
+        {sectionFive.map((item, idx) => {
           const isHovered = hoveredIdx === idx;
 
           return (
@@ -91,13 +146,15 @@ export default function SectionFive() {
         })}
       </div>
 
-      <PrimaryButton
-        varient="black"
-        className="gap-2 mt-4 hover:bg-black/70"
-        label="shop collection"
-      >
-        <ArrowRight size={20} />
-      </PrimaryButton>
+      {screenWidth < 776 && (
+        <PrimaryButton
+          varient="black"
+          className="gap-2 mt-4 hover:bg-black/70"
+          label="shop collection"
+        >
+          <ArrowRight size={20} />
+        </PrimaryButton>
+      )}
     </section>
   );
 }

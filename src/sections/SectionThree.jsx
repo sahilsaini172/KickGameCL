@@ -18,7 +18,7 @@ const sectionThree = [
 
 export default function SectionThree() {
   return (
-    <section className="flex flex-col bg-surface p-4">
+    <section className="flex flex-col bg-surface p-4 md:p-8 lg:p-12">
       <h2 className="uppercase text-xl font-bold tracking-wide mb-4">
         greatest brands
       </h2>
