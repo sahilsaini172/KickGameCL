@@ -8,6 +8,8 @@ import SectionSeven from "./sections/SectionSeven";
 import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
+import SectionNine from "./sections/SectionNine";
+import Footer from "./sections/Footer";
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -28,10 +30,12 @@ function App() {
       </div>
       <SectionThree />
       <SectionFour />
-      <SectionFive screenWidth={screenWidth}/>
+      <SectionFive screenWidth={screenWidth} />
       <SectionSix />
       <SectionSeven screenWidth={screenWidth} />
       <SectionEight />
+      <SectionNine screenWidth={screenWidth} />
+      <Footer screenWidth={screenWidth} />
     </div>
   );
 }
