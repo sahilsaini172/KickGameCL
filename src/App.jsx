@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import SectionEight from "./sections/SectionEight";
@@ -10,6 +10,7 @@ import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import SectionNine from "./sections/SectionNine";
 import Footer from "./sections/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -23,6 +24,7 @@ function App() {
   });
   return (
     <div className="h-screen bg-surface flex flex-col select-none duration-150 ease-in **:duration-150 **:ease-in">
+      <Analytics/>
       <Navbar />
       <Hero />
       <div>
