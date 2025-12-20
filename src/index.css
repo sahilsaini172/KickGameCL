@@ -10,8 +10,14 @@
   stroke-width: 1px;
 }
 
+::-webkit-scrollbar {
+  appearance: none;
+  height: 0px;
+  background-color: transparent;
+}
+
 @theme {
   --color-surface: #fcfbf7;
-  --color-primary: #F5F2EC;
+  --color-primary: #f5f2ec;
   --color-secondary: #444444;
 }
